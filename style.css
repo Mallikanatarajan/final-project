@@ -1,32 +1,422 @@
 
+/* -----------------------------
+GLOBAL PAGE
+----------------------------- */
+
 body {
   margin: 0;
-  font-family: Arial;
+  background: #f1f3f4;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
   padding: 40px 0;
 }
 
+
+/* -----------------------------
+MAIN CAPTCHA BOX
+----------------------------- */
+button {
+  position: relative;
+  z-index: 10;
+}
 .captcha-box {
   width: 420px;
   min-height: 500px;
+  height: auto;
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
   padding: 20px;
+  border-radius: 6px;
+  position: relative;
+  transition:
+    background 0.4s,
+    color 0.4s;
 }
 
-.title { background:#1a73e8;color:white;padding:15px;margin:-20px -20px 20px; }
 
-.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+/* -----------------------------
+TOP TITLE BAR
+----------------------------- */
+.title {
+  background: #1a73e8;
+  color: white;
+  padding: 18px;
+  margin: -20px -20px 20px -20px;
+  font-size: 22px;
+  font-weight: bold;
+}
 
-.tile { aspect-ratio:1/1; background-size:cover; border:2px solid transparent; cursor:pointer; }
 
-.tile.selected { border:2px solid #1a73e8; }
+/* -----------------------------
+INSTRUCTION TEXT
+----------------------------- */
+.instruction {
+  font-size: 18px;
 
-button { margin-top:10px; float:right; }
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
 
-.hidden { display:none; }
 
-.camera-section { margin-top:20px; text-align:center; }
+/* -----------------------------
+CAPTCHA GRID
+----------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 20px;
+}
 
-.end-screen { font-family: monospace; white-space: pre-wrap; }
+/* -----------------------------
+INDIVIDUAL IMAGE TILE
+----------------------------- */
+
+.tile {
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.tile:hover {
+  opacity: 0.92;
+}
+.tile.selected {
+
+  border: 3px solid #1a73e8;
+}
+
+
+/* -----------------------------
+VERIFY BUTTON
+----------------------------- */
+
+button {
+
+  background: #1a73e8;
+  color: white;
+
+  border: none;
+  padding: 12px 22px;
+  border-radius: 4px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+  float: right;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+
+/* -----------------------------
+MESSAGES
+----------------------------- */
+
+.message {
+  margin-top: 14px;
+  color: #cc0000;
+  min-height: 20px;
+
+  clear: both;
+}
+
+
+/* -----------------------------
+STATUS TEXT
+----------------------------- */
+
+.status {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* -----------------------------
+GLITCH EFFECT
+----------------------------- */
+.glitch {
+  animation: glitch 0.25s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(1px, 0px);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, 0px);
+  }
+  100% {
+    transform: translate(0px, 1px);
+  }
+}
+
+
+/* -----------------------------
+HIDDEN ELEMENTS
+----------------------------- */
+.hidden {
+  display: none;
+}
+
+
+/* -----------------------------
+DARK SURVEILLANCE STAGE
+----------------------------- */
+.dark-stage {
+  background: #050505;
+
+  color: #e8e8e8;
+
+  border: 1px solid #1f1f1f;
+}
+
+.dark-stage .title {
+  background: #101010;
+
+  color: #7dff7d;
+}
+
+.dark-stage button {
+  background: #1a1a1a;
+
+  color: #7dff7d;
+
+  border: 1px solid #7dff7d;
+}
+
+
+/* -----------------------------
+CAMERA SECTION
+----------------------------- */
+
+.camera-section {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+/* -----------------------------
+CAMERA LABEL
+----------------------------- */
+
+.camera-label {
+  color: #7dff7d;
+
+  font-size: 14px;
+
+  margin-bottom: 10px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* -----------------------------
+FAKE WEBCAM IMAGE
+----------------------------- */
+
+.camera-feed {
+  width: 100%;
+
+  border: 2px solid #7dff7d;
+
+  filter:
+    contrast(1.1)
+    grayscale(0.3);
+
+  animation:
+    flicker 0.12s infinite alternate;
+}
+
+
+/* -----------------------------
+WEBCAM FLICKER
+----------------------------- */
+
+@keyframes flicker {
+
+  from {
+    opacity: 0.96;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* -----------------------------
+SCAN TEXT
+----------------------------- */
+
+.scan-text {
+
+  margin-top: 14px;
+
+  color: #aaaaaa;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* -----------------------------
+LEGAL TEXT
+----------------------------- */
+
+.legal-text {
+  margin-top: 16px;
+  font-size: 11px;
+
+  color: #666;
+
+  line-height: 1.5;
+}
+
+
+/* -----------------------------
+LOADING AREA
+----------------------------- */
+
+.loading-area {
+  margin-top: 20px;
+}
+
+
+/* -----------------------------
+LOADING BAR
+----------------------------- */
+
+.loading-bar {
+  width: 100%;
+
+  height: 12px;
+
+  background: #222;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+}
+
+
+/* -----------------------------
+LOADING FILL
+----------------------------- */
+
+.loading-fill {
+  height: 100%;
+
+  width: 30%;
+
+  background: #7dff7d;
+
+  animation: load 4s infinite;
+}
+
+
+/* -----------------------------
+LOADING ANIMATION
+----------------------------- */
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 87%;
+  }
+
+  100% {
+    width: 12%;
+  }
+}
+
+
+/* -----------------------------
+ENDING SCREEN
+----------------------------- */
+
+.end-screen {
+  color: #e8e8e8;
+
+  font-family: monospace;
+
+  line-height: 1.7;
+
+  padding-top: 20px;
+
+  padding-bottom: 40px;
+}
+
+
+/* -----------------------------
+DATABASE TEXT
+----------------------------- */
+
+.database-text {
+  margin-top: 20px;
+
+  color: #7dff7d;
+
+  white-space: pre-wrap;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* -----------------------------
+FINAL STATUS LOOK
+----------------------------- */
+
+.dark-stage .message {
+  color: #7dff7d;
+}
+
+.dark-stage .instruction {
+
+  color: #e8e8e8;
+}
+
+
+/* -----------------------------
+SCROLLBAR
+----------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+}
+

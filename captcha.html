@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<title>CAPTCHA</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Human Verification</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="captcha-box" id="captchaBox">
 
-<div class="title">Verify you are human</div>
+  <!-- TOP BAR -->
+  <div class="title">
+    Verify you are human
+  </div>
 
-<div class="instruction" id="instruction"></div>
+  <!-- INSTRUCTIONS -->
+  <div class="instruction" id="instruction">
+    Select all images containing bridges.
+  </div>
 
-<div class="grid" id="grid"></div>
+  <!-- CAPTCHA GRID -->
+  <div class="grid" id="grid">
 
-<div class="camera-section hidden" id="cameraSection">
-<div class="camera-label">LIVE BEHAVIORAL ANALYSIS</div>
-<img src="images/webcam_fake.jpg" class="camera-feed"/>
-<div class="scan-text">
-<p>Analyzing facial consistency...</p>
-<p>Behavioral confidence: unstable</p>
-<p class="legal-text">Simulated system</p>
-</div>
-</div>
+    <!-- Images are loaded dynamically by JavaScript -->
 
-<button id="verifyBtn">Verify</button>
-<div class="message" id="message"></div>
+  </div>
+
+  <!-- STAGE 4 CAMERA SECTION -->
+  <div class="camera-section hidden" id="cameraSection">
+
+    <div class="camera-label">
+      LIVE BEHAVIORAL ANALYSIS
+    </div>
+
+    <!-- YOUR PHOTOSHOP IMAGE -->
+    <img
+      src="images/webcam_fake.jpg"
+      class="camera-feed"
+      id="cameraFeed"
+    >
+
+    <!-- SURVEILLANCE TEXT -->
+    <div class="scan-text">
+
+      <p>Analyzing facial consistency...</p>
+
+      <p id="scanStatus">
+        Behavioral confidence: unstable
+      </p>
+
+      <p class="legal-text">
+        By continuing, you consent to behavioral analysis,
+        emotional prediction, identity synthesis,
+        and indefinite dataset retention.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- VERIFY BUTTON -->
+  <button id="verifyBtn">
+    Verify
+  </button>
+
+  <!-- ERROR / STATUS MESSAGE -->
+  <div class="message" id="message"></div>
+
+  <!-- LOADING BAR -->
+  <div class="loading-bar hidden" id="loadingBar">
+    <div class="loading-fill"></div>
+  </div>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
