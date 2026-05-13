@@ -1,193 +1,84 @@
-# Replace Your `index.html` With This
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Surveillance CAPTCHA System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Human Verification</title>
 
-  <style>
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0d0d0d;
-      color: #e8e8e8;
-      line-height: 1.7;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 0;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #7dff7d;
-    }
-
-    h2 {
-      margin-top: 50px;
-      color: #7dff7d;
-      border-bottom: 1px solid #333;
-      padding-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #d0d0d0;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border: 1px solid #333;
-    }
-
-    .hero-image {
-      max-height: 650px;
-      object-fit: cover;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 24px;
-      background: #7dff7d;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      opacity: 0.9;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      margin: 0;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    ul {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 700px) {
-
-      h1 {
-        font-size: 34px;
-      }
-
-      p,
-      ul {
-        font-size: 16px;
-      }
-
-      .gallery img {
-        height: auto;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<div class="captcha-box" id="captchaBox">
 
-  <h1>Surveillance CAPTCHA System</h1>
+  <!-- TOP BAR -->
+  <div class="title">
+    Verify you are human
+  </div>
 
-  <img
-    src="images/screenshots/stage4.png"
-    alt="Project Screenshot"
-    class="hero-image"
-  >
+  <!-- INSTRUCTIONS -->
+  <div class="instruction" id="instruction">
+    Select all images containing bridges.
+  </div>
 
-  <p>
-    This project explores how CAPTCHA systems evolve into surveillance,
-    behavioral tracking, and machine-learning data extraction systems.
-    The experience gradually transforms from a familiar verification interface
-    into simulated biometric analysis and identity archiving.
-  </p>
+  <!-- CAPTCHA GRID -->
+  <div class="grid" id="grid">
 
-  <a href="captcha.html" class="button">
-    Enter the System
-  </a>
-
-  <h2>About the Project</h2>
-
-  <p>
-    The project critiques surveillance creep and the normalization of data collection
-    through everyday interfaces. Inspired by systems like Palantir and predictive
-    behavioral analysis platforms, the work imagines CAPTCHA not as security,
-    but as a hidden training pipeline where human interaction becomes machine-learning data.
-  </p>
-
-  <p>
-    The interface intentionally shifts from recognizable image-selection tasks into
-    increasingly invasive behavioral monitoring. Visual glitches, false biometric analysis,
-    and database language are used to create discomfort and highlight how surveillance systems
-    slowly expand beyond their original purpose.
-  </p>
-
-  <h2>Process Documentation</h2>
-
-  <div class="gallery">
-
-    <img src="images/screenshots/process.png" alt="Process">
-
-    <img src="images/screenshots/stage4.png" alt="Stage 4">
+    <!-- Images are loaded dynamically by JavaScript -->
 
   </div>
 
-  <h2>References & Influences</h2>
+  <!-- STAGE 4 CAMERA SECTION -->
+  <div class="camera-section hidden" id="cameraSection">
 
-  <ul>
-    <li>
-      <strong>Shoshana Zuboff – The Age of Surveillance Capitalism</strong><br>
-      Influenced the project's focus on behavioral data extraction and predictive systems.
-    </li>
+    <div class="camera-label">
+      LIVE BEHAVIORAL ANALYSIS
+    </div>
 
-    <li>
-      <strong>Palantir-style data aggregation systems</strong><br>
-      Inspired the visual language of identity parsing, system classification,
-      and centralized behavioral archives.
-    </li>
-  </ul>
+    <!-- YOUR PHOTOSHOP IMAGE -->
+    <img
+      src="images/webcam_fake.jpg"
+      class="camera-feed"
+      id="cameraFeed"
+    >
+
+    <!-- SURVEILLANCE TEXT -->
+    <div class="scan-text">
+
+      <p>Analyzing facial consistency...</p>
+
+      <p id="scanStatus">
+        Behavioral confidence: unstable
+      </p>
+
+      <p class="legal-text">
+        By continuing, you consent to behavioral analysis,
+        emotional prediction, identity synthesis,
+        and indefinite dataset retention.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- VERIFY BUTTON -->
+  <button id="verifyBtn">
+    Verify
+  </button>
+
+  <!-- ERROR / STATUS MESSAGE -->
+  <div class="message" id="message"></div>
+
+  <!-- LOADING BAR -->
+  <div class="loading-bar hidden" id="loadingBar">
+    <div class="loading-fill"></div>
+  </div>
 
 </div>
 
+<script src="script.js"></script>
+
 </body>
 </html>
-```
-
-# IMPORTANT
-
-Make sure your screenshots actually exist here:
-
-```text
-images/screenshots/stage1.png
-images/screenshots/stage4.png
-images/screenshots/process.png
-```
-
-Otherwise the images will not load on GitHub Pages.
