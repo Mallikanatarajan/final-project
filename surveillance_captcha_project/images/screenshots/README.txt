@@ -1,1 +1,0 @@
-Place your screenshots here (stage1, stage4, process images).
