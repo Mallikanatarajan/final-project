@@ -1,31 +1,181 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surveillance CAPTCHA System</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #7dff7d;
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: #7dff7d;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #d0d0d0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+    }
+
+    .hero-image {
+      max-height: 650px;
+      object-fit: cover;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 24px;
+      background: #7dff7d;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      margin: 0;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    ul {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+
+      h1 {
+        font-size: 34px;
+      }
+
+      p,
+      ul {
+        font-size: 16px;
+      }
+
+      .gallery img {
+        height: auto;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-<h1>Surveillance CAPTCHA System</h1>
+<div class="container">
 
-<img src="images/screenshots/stage4.png" style="width:100%;">
+  <h1>Surveillance CAPTCHA System</h1>
 
-<p>
-This project explores how CAPTCHA systems evolve into surveillance and behavioral tracking interfaces.
-</p>
+  <img
+    src="images/screenshots/stage4.png"
+    alt="Project Screenshot"
+    class="hero-image"
+  >
 
-<h2>Interactive Work</h2>
+  <p>
+    This project explores how CAPTCHA systems evolve into surveillance,
+    behavioral tracking, and machine-learning data extraction systems.
+    The experience gradually transforms from a familiar verification interface
+    into simulated biometric analysis and identity archiving.
+  </p>
 
-<a href="captcha.html">Enter the System</a>
+  <a href="captcha.html" class="button">
+    Enter the System
+  </a>
 
-<h2>Process</h2>
-<img src="images/screenshots/process.png" style="width:100%;">
+  <h2>About the Project</h2>
 
-<h2>References</h2>
-<ul>
-<li>Shoshana Zuboff – Surveillance Capitalism</li>
-<li>Palantir-style data aggregation systems</li>
-</ul>
+  <p>
+    The project critiques surveillance creep and the normalization of data collection
+    through everyday interfaces. Inspired by systems like Palantir and predictive
+    behavioral analysis platforms, the work imagines CAPTCHA not as security,
+    but as a hidden training pipeline where human interaction becomes machine-learning data.
+  </p>
+
+  <p>
+    The interface intentionally shifts from recognizable image-selection tasks into
+    increasingly invasive behavioral monitoring. Visual glitches, false biometric analysis,
+    and database language are used to create discomfort and highlight how surveillance systems
+    slowly expand beyond their original purpose.
+  </p>
+
+  <h2>Process Documentation</h2>
+
+  <div class="gallery">
+
+    <img src="images/screenshots/stage1.png" alt="Stage 1">
+
+    <img src="images/screenshots/process.png" alt="Process">
+
+    <img src="images/screenshots/stage4.png" alt="Stage 4">
+
+  </div>
+
+  <h2>References & Influences</h2>
+
+  <ul>
+    <li>
+      <strong>Shoshana Zuboff – The Age of Surveillance Capitalism</strong><br>
+      Influenced the project's focus on behavioral data extraction and predictive systems.
+    </li>
+
+    <li>
+      <strong>Palantir-style data aggregation systems</strong><br>
+      Inspired the visual language of identity parsing, system classification,
+      and centralized behavioral archives.
+    </li>
+  </ul>
+
+</div>
 
 </body>
 </html>
+
